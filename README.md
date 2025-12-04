@@ -1,35 +1,44 @@
-# Expense Tracker (Python) — Placement Submission
+# Expense Tracker Application
 
-Score target: complete functionality + extras (monthly budgets, custom alerts, optional email alerts, shared expenses).
+A Python + Flask + SQLAlchemy based Expense Tracker that allows users to log expenses, set category-wise budgets, receive alerts, view monthly reports, and handle shared group expenses.  
+Designed according to the assignment specification with clean backend architecture, ORM usage, testing, and Docker support.
 
-## Overview
-A small Flask API + SQLite backend to:
+---
+
+# 1. Features
+
+## Core Features
 - Log daily expenses
-- Categorize expenses (`Food`, `Transport`, etc.)
-- Set monthly budgets per category (with per-month override)
-- Alerts when budget exceeded (and configurable %-left alerts)
-- Basic reports:
-  - Total spending per month
-  - Spending vs budget per category
+- Category-wise expenses (Food, Transport, Entertainment, etc.)
+- Monthly budgets per category
+- Automatic alerts when:
+  - Budget exceeded
+  - Only 10% budget remains (configurable via `.env`)
+- Monthly spending summary
+- Spending vs Budget comparison for each category
 
-Extras implemented:
-- Different budgets per month
-- Custom alerts (e.g., when only 10% budget left)
-- Email notification hooks (using SMTP; requires SMTP config)
-- Shared expenses skeleton (split amounts among users)
+## Extra Credit Features Implemented
+- Different budgets for different months
+- Custom threshold-based alerts
+- Email notifications (configurable)
+- Shared group expenses (Splitwise-style)
+- CLI commands to add expenses and set budgets
 
-## Files
-- `app.py` — Flask REST API + main app
-- `models.py` — SQLAlchemy models (User, Category, Expense, Budget, SharedExpense)
-- `db_init.py` — script to create DB & seed categories
-- `requirements.txt` — Python deps
-- `Dockerfile`, `docker-compose.yml` — for containerized run
-- `tests/test_api.py` — pytest tests (basic)
+---
 
-## Quick start (local)
-1. Clone the repo
-2. Create virtual env and install:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # or venv\Scripts\activate on Windows
-   pip install -r requirements.txt
+# 2. Tech Stack
+
+- **Python 3.11**
+- **Flask 2.3**
+- **SQLAlchemy ORM**
+- **SQLite Database**
+- **pytest** for testing
+- **Docker** for containerized deployment
+- **dotenv** for environment management
+
+---
+
+# 3. Dependencies
+
+All dependencies are listed in `requirements.txt`.
+
